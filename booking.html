@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Room Booking - Sunrise Hotel</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Room Booking Form</h2>
+        <form id="bookingForm" action="process_booking.php" method="POST">
+            <div class="form-group">
+                <label>Full Name:</label>
+                <input type="text" id="fullName" name="fullName">
+            </div>
+            <div class="form-group">
+                <label>National ID/Passport:</label>
+                <input type="text" id="idNumber" name="idNumber">
+            </div>
+            <div class="form-group">
+                <label>Email Address:</label>
+                <input type="email" id="email" name="email">
+            </div>
+            <div class="form-group">
+                <label>Phone Number:</label>
+                <input type="text" id="phone" name="phone">
+            </div>
+            <div class="form-group">
+                <label>Check-in Date:</label>
+                <input type="date" id="checkIn" name="checkIn">
+            </div>
+            <div class="form-group">
+                <label>Number of Nights (1-14):</label>
+                <input type="number" id="nights" name="nights" min="1" max="14">
+            </div>
+            <div class="form-group">
+                <label>Room Type:</label>
+                <select id="roomType" name="roomType">
+                    <option value="">--Select Room--</option>
+                    <option value="Single">Single Room</option>
+                    <option value="Double">Double Room</option>
+                    <option value="Family">Family Room</option>
+                </select>
+                <small id="roomCapacityMsg" class="dynamic-msg"></small>
+            </div>
+            <div class="form-group">
+                <label>Number of Guests:</label>
+                <input type="number" id="guests" name="guests" min="1">
+                <small id="guestWarning" class="error-msg"></small>
+            </div>
+            <div class="form-group">
+                <label><input type="checkbox" id="breakfast" name="breakfast" value="Yes"> Include Breakfast</label>
+            </div>
+            <div class="form-group">
+                <label><input type="checkbox" id="transfer" name="transfer" value="Yes"> Airport Transfer</label>
+                <small id="transferMsg" class="dynamic-msg"></small>
+            </div>
+            <div class="form-group">
+                <label><input type="checkbox" id="conference" name="conference" value="Yes"> Book Conference Room</label>
+            </div>
+            
+            <div id="errorContainer" class="error-msg"></div>
+            
+            <div class="summary-box">
+                <h3>Estimated Cost: KSh <span id="totalCost">0</span></h3>
+            </div>
+            
+            <button type="submit" class="btn">Submit Booking</button>
+        </form>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>
